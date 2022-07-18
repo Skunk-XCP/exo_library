@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block main %}
+    <div class="btn-book">
+        <a href="{{ path ('admin_insert_book') }}" class="btn-create">Ajouter un livre </a>
+    </div>
+    {% for book in books %}
+        <article class="book">
+            {% if book.title %}
+                <h1>{{ book.title }}</h1>
+            {% endif %}
+            <div class="lien">
+                <a class="btn" href={{ path('admin_book', {'id': book.id }) }}>Voir le détail du livre</a>
+                <a class="btn" href="{{ path ('admin_update_book',{'id':book.id }) }}">Modifier ce livre </a>
+                <a class="btn" href="{{ path ('admin_delete_book',{'id':book.id }) }}">Voulez-vous supprimer ce
+                    livre ? </a>
+            </div>
+        </article>
+    {% endfor %}
+
+{% endblock %}

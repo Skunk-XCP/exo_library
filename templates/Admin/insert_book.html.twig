@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    {{ form_start(form) }}
+
+
+    {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+    {{ form_errors(form.title) }}
+
+{#    {{ form_label(form.resume, 'Résumé', {'label_attr': {'class': 'form-label'}}) }}#}
+{#    {{ form_widget(form.resume, {'attr': {'class': 'form-control'}}) }}#}
+{#    {{ form_errors(form.resume) }}#}
+
+    {{ form_label(form.genre, 'Genre', {'label_attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.genre, {'attr': {'class': 'form-control'}}) }}
+    {{ form_errors(form.genre) }}
+
+{#    {{ form_label(form.nombreDePage, 'Nombre de pages', {'label_attr': {'class': 'form-label'}}) }}#}
+{#    {{ form_widget(form.nombreDePage, {'attr': {'class': 'form-control'}}) }}#}
+{#    {{ form_errors(form.nombreDePage) }}#}
+
+    {{ form_label(form.isPublished, 'Est publié ?', {'label_attr': {'class': 'form-check-label'}}) }}
+    {{ form_widget(form.isPublished, {'attr': {'class': 'form-check-label'}}) }}
+    {{ form_errors(form.isPublished) }}
+
+    {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+
+    {{ form_end(form) }}
+{% endblock %}
